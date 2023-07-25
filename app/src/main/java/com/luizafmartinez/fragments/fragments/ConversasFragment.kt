@@ -14,11 +14,17 @@ class ConversasFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(
+
+        val view = inflater.inflate(
             R.layout.fragment_conversas,
             container,
             false
         )
+
+        // Processamento da Visualização
+        //view.findViewById<>()
+
+        return view
     }
 
 }
