@@ -7,33 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.luizafmartinez.fragments.R
 
-class ConversasFragment : Fragment() {
+class ChamadasFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-            val view = inflater.inflate(
-                R.layout.fragment_conversas,
-                container,
-                false
-            )
-            // Processamento da Visualização
-            //view.findViewById<>()
-
-            return view
-       }
-
+        return inflater.inflate(
+            R.layout.fragment_chamadas,
+            container,
+            false
+        )
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
