@@ -2,6 +2,7 @@ package com.luizafmartinez.fragments
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import com.luizafmartinez.fragments.fragments.ChamadasFragment
 import com.luizafmartinez.fragments.fragments.ConversasFragment
@@ -14,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Log.i("Ciclo_Vida", "Activity onCreate")
 
         btnConversas = findViewById(R.id.btn_conversas)
         btnChamadas  = findViewById(R.id.btn_chamadas)
@@ -39,12 +42,27 @@ class MainActivity : AppCompatActivity() {
                 //.remove(conversasFragment)
                 .commit()
         }
-
-
-
     }
+    override fun onStart() {
+        super.onStart()
+        Log.i("Ciclo_Vida", "Activity onStart")
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.i("Ciclo_Vida", "Activity onResume")
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.i("Ciclo_Vida", "Activity onPause")
+    }
+    override fun onStop() {
+        super.onStop()
+        Log.i("Ciclo_Vida", "Activity onStop")
+    }
+    override fun onDestroy() {
+        Log.i("Ciclo_Vida", "Activity onDestroy")
+        super.onDestroy()
+    }
+
 }
-
-
-
 
