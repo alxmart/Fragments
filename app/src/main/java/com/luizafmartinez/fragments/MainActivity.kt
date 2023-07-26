@@ -35,8 +35,8 @@ class MainActivity : AppCompatActivity() {
         btnChamadas.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                //.replace( R.id.fragment_conteudo,ChamadasFragment() )
-                .remove(conversasFragment)
+                .replace( R.id.fragment_conteudo,ChamadasFragment() )
+                //.remove(conversasFragment)
                 .commit()
         }
 
