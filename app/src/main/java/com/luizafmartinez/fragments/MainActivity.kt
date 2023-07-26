@@ -23,19 +23,19 @@ class MainActivity : AppCompatActivity() {
 //        fragmentManager.add( R.id.fragment_conteudo,ConversasFragment() )
 //        fragmentManager.commit()
 
-        val conversasFragment = ConversasFragment()
+        //val conversasFragment = ConversasFragment() => Para usar c/ remove
 
         btnConversas.setOnClickListener {
             supportFragmentManager
             .beginTransaction()
-            .replace( R.id.fragment_conteudo, conversasFragment )
+            .replace( R.id.fragment_conteudo, ConversasFragment() )
             .commit()
         }
 
         btnChamadas.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace( R.id.fragment_conteudo,ChamadasFragment() )
+                .replace( R.id.fragment_conteudo, ChamadasFragment() )
                 //.remove(conversasFragment)
                 .commit()
         }
