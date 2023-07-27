@@ -6,10 +6,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.luizafmartinez.fragments.R
 
+//class ConversasFragment : Fragment(R.layout.fragment_conversas) {
 class ConversasFragment : Fragment() {
+
+    private lateinit var editNome : EditText
+    private lateinit var btnExecutar : Button
+    private lateinit var textNome : TextView
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -32,6 +40,18 @@ class ConversasFragment : Fragment() {
             )
             // Processamento da Visualização
             //view.findViewById<>()
+            //No caso do Fragment, precisa usar view.findViewById pq nao tem
+            // um setContentView(R.layout.activity_main)
+
+            editNome =  view.findViewById(R.id.edit_nome)
+            btnExecutar =  view.findViewById(R.id.btn_executar)
+            textNome =  view.findViewById(R.id.text_nome)
+
+            btnExecutar.setOnClickListener {
+               /* val nome = editNome.text.toString()
+                textNome.text = nome*/
+                textNome.text = editNome.text.toString()
+            }
 
             return view
        }
@@ -78,15 +98,3 @@ class ConversasFragment : Fragment() {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
